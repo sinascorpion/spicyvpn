@@ -1,6 +1,6 @@
 # SpicyVPN
 
-An open-source, multi-engine connection client.
+Multi-engine VPN client
 
 [Get SpicyVPN on Google Play](https://play.google.com/store/apps/details?id=com.vpn.spicy)
  | [Download Android APKs](https://github.com/sinascorpion/spicyvpn/releases)
@@ -26,26 +26,11 @@ renamed third-party applications.
 Capabilities depend on the selected engine and operating system. A listed engine
 does not imply every advanced option works with every other engine.
 
-## Source and Service Boundary
+## Connection Modes
 
-This repository contains client source, engine adaptations and build helpers.
-The hosted discovery service, server inventory, administrator dashboard and its
-credentials are not distributed here. The client retains its public discovery
-API so Auto and Manual keep their existing behavior. A client API address is not
-a secret and cannot be made inaccessible to someone inspecting an installed app.
-
-## Building
-
-Use JDK 17, the Android SDK/NDK versions declared in the Gradle project, Python
-3.11+, Go and Rust. Native engines must be built before compiling the app; their
-source and platform build helpers are included under `android/native` and
-`scripts`. Prebuilt engine binaries are deliberately not stored in source Git.
-See the source snapshot and About metadata for the exact engine versions in
-an official release. Local release signing requires your own
-keystore. The project's signing credentials are never supplied to forks.
-
-Android releases contain architecture-specific and universal APKs. Google Play
-App Bundles are not published in this repository.
+- **Auto:** Automatically finds a working connection and checks available servers on your network.
+- **Manual:** Browse available servers, compare latency, save favorites and choose which server to connect to.
+- **Custom:** Import your own configurations and subscriptions, organize profiles into folders and manage connection settings.
 
 ## License
 
