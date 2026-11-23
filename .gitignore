@@ -2,6 +2,8 @@
 .idea/
 .cxx/
 build/
+!android/native/third-party/boring-sys-5/build/
+!android/native/third-party/boring-sys-5/build/*.rs
 target/
 local.properties
 .env*
