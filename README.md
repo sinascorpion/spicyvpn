@@ -2,9 +2,6 @@
 
 Multi-engine VPN client
 
-[Get SpicyVPN on Google Play](https://play.google.com/store/apps/details?id=com.vpn.spicy)
- | [Download Android APKs](https://github.com/sinascorpion/spicyvpn/releases)
-
 ## Available Platform
 
 Android is available today. Desktop clients for Windows, Linux and macOS are not
