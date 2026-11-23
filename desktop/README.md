@@ -17,11 +17,14 @@ replacement for the Android client and is not promoted to stable public releases
 
 ## Verification Boundary
 
-Automated fixtures exercise actual traffic through Mihomo HTTP and Xray VMess
-outbounds and SSH, without modifying the developer machine's global routes or
-opening Internet-facing listeners. Parser tests do not prove live service access.
-System TUN requires operating-system privileges; a production privileged helper,
-crash-recovery validation and independent OS testing are still required.
+Automated fixtures exercise actual traffic through Mihomo HTTP, Xray VMess,
+SSH and certificate-verified SSH+TLS. GUI-disconnect cleanup, encrypted storage
+updates and UI behavior are also tested. Real TUN and route restoration passed
+on disposable Windows and macOS runners and in an isolated Linux network
+namespace. None of these tests change the developer server's global routes or
+open Internet-facing listeners. Parser tests do not prove live service access.
+System TUN requires operating-system privileges; production privilege handling,
+complete crash-recovery validation and independent end-user testing remain.
 
 OpenVPN, OpenConnect, IKEv2, DNSTT, MasterDNS, StormDNS, Tor bridges, Psiphon,
 all advanced S-button combinations and protected folder bundles have not been

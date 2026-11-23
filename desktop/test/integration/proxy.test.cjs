@@ -15,7 +15,7 @@ const engines = path.resolve(__dirname, '../../engines');
 
 for (const guarded of [false, true]) test(`real Mihomo HTTP proxy data plane and ${guarded ? 'GUI disconnect guardian' : 'disconnect cleanup'}`, { timeout: 40000 }, async t => {
   const sockets = new Set();
-  const track = server => server.on('connection', socket => { sockets.add(socket); socket.on('close', () => sockets.delete(socket)); });
+  const track = server => server.on('connection', socket => { sockets.add(socket); socket.on('error', () => {}); socket.on('close', () => sockets.delete(socket)); });
   const origin = http.createServer((_req, res) => { res.writeHead(200); res.end('SPICY-DESKTOP-DATA-PLANE'); }); track(origin);
   await new Promise(r => origin.listen(0, '127.0.0.1', r));
   const originPort = origin.address().port; let hops = 0;
@@ -24,7 +24,7 @@ for (const guarded of [false, true]) test(`real Mihomo HTTP proxy data plane and
     if (request.url !== `127.0.0.1:${originPort}`) return socket.destroy();
     hops++;
     const upstream = net.connect(originPort, '127.0.0.1', () => { socket.write('HTTP/1.1 200 Connection Established\r\n\r\n'); if (head.length) upstream.write(head); upstream.pipe(socket); socket.pipe(upstream); });
-    sockets.add(upstream); upstream.on('close', () => sockets.delete(upstream));
+    sockets.add(upstream); upstream.on('error', () => socket.destroy()); upstream.on('close', () => sockets.delete(upstream));
   });
   await new Promise(r => proxy.listen(0, '127.0.0.1', r));
   const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'spicy-desktop-test-'));

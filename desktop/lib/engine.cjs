@@ -98,9 +98,20 @@ class Engine extends EventEmitter {
       this.dispatcher = new ProxyAgent(`http://127.0.0.1:${ports.proxy}`);
       // Never claim Connected merely because a process or a local listener exists.
       const started = Date.now();
-      const response = await fetch(options.probeUrl || 'https://www.gstatic.com/generate_204', { dispatcher: this.dispatcher, signal: AbortSignal.any([AbortSignal.timeout(20000), this.abort.signal]), redirect: 'manual' });
-      await response.arrayBuffer();
-      if (response.status !== (options.probeStatus || 204)) throw new Error('The tunnel did not pass the connectivity check.');
+      let probeError;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        try {
+          const response = await fetch(options.probeUrl || 'https://www.gstatic.com/generate_204', { dispatcher: this.dispatcher, signal: AbortSignal.any([AbortSignal.timeout(Math.max(1000, 20000 - (Date.now() - started))), this.abort.signal]), redirect: 'manual' });
+          await response.arrayBuffer();
+          if (response.status !== (options.probeStatus || 204)) throw new Error('The tunnel did not pass the connectivity check.');
+          probeError = null; break;
+        } catch (error) {
+          probeError = error;
+          if (this.cancelled || Date.now() - started >= 20000) break;
+          await new Promise(resolve => setTimeout(resolve, 300 * (attempt + 1)));
+        }
+      }
+      if (probeError) throw probeError;
       if (settings.mode === 'proxy' && settings.systemProxy !== false && !options.skipSystemProxy) await this.system.enable(ports.proxy);
       this.update({ status: 'connected', latency: Date.now() - started, proxyPort: ports.proxy });
       this.timer = setInterval(() => this.stats().catch(() => {}), 1000);

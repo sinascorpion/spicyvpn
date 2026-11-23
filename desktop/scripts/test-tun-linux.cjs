@@ -26,9 +26,13 @@ async function parent() {
   if (process.platform !== 'linux' || process.getuid() !== 0 || process.env.GITHUB_ACTIONS !== 'true') throw new Error('TUN integration fixture runs only as root on an isolated GitHub Linux runner.');
   const suffix = process.pid.toString(36), namespace = 'spicy-' + suffix, host = 'spv' + suffix, peer = 'spn' + suffix;
   const ip = (...args) => execFileSync('ip', args, { stdio: 'pipe' });
-  const sockets = new Set(); let origin, proxy, child, hops = 0, namespaceCreated = false, linkCreated = false;
+  const sockets = new Set(); let origin, proxy, child, hops = 0, namespaceCreated = false, linkCreated = false, resolverCreated = false;
+  const resolverDirectory = '/etc/netns/' + namespace;
   try {
     ip('netns', 'add', namespace); namespaceCreated = true;
+    await fs.mkdir('/etc/netns', { recursive: true });
+    await fs.mkdir(resolverDirectory); resolverCreated = true;
+    await fs.copyFile('/etc/resolv.conf', path.join(resolverDirectory, 'resolv.conf'));
     ip('link', 'add', host, 'type', 'veth', 'peer', 'name', peer); linkCreated = true;
     ip('link', 'set', peer, 'netns', namespace);
     ip('addr', 'add', '10.203.77.1/24', 'dev', host); ip('addr', 'add', '10.203.78.1/32', 'dev', host); ip('link', 'set', host, 'up');
@@ -55,6 +59,7 @@ async function parent() {
     child?.kill(); for (const socket of sockets) socket.destroy(); origin?.close(); proxy?.close();
     if (namespaceCreated) { try { ip('netns', 'del', namespace); } catch {} }
     if (linkCreated) { try { ip('link', 'del', host); } catch {} }
+    if (resolverCreated) await fs.rm(resolverDirectory, { recursive: true, force: true });
   }
 }
 (process.argv[2] === '--worker' ? worker(Number(process.argv[3]), Number(process.argv[4])) : parent()).catch(error => { console.error(error); process.exitCode = 1; });

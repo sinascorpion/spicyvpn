@@ -11,6 +11,8 @@ const { parseInput } = require('./lib/profiles.cjs');
 let window, engine, store, state, allowQuit = false;
 if (!app.isPackaged && process.env.SPICY_TEST_DIRECTORY) app.setPath('userData', process.env.SPICY_TEST_DIRECTORY);
 if (!app.isPackaged && process.env.SPICY_SMOKE === '1') app.disableHardwareAcceleration();
+if (!app.requestSingleInstanceLock()) app.exit(0);
+app.on('second-instance', () => { if (window) { if (window.isMinimized()) window.restore(); window.show(); window.focus(); } });
 const API = 'https://admin-panel-ten-iota-82.vercel.app/api/healthy-proxies';
 const engines = app.isPackaged ? path.join(process.resourcesPath, 'engines') : path.join(__dirname, 'engines');
 let manual = [], autoCandidates = [], logs = [], autoCancelled = false;

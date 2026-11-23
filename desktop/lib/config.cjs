@@ -18,7 +18,7 @@ function buildConfig(profile, settings, ports, upstream) {
     'geodata-mode': true,
     'geox-url': { geoip: 'https://raw.githubusercontent.com/Chocolate4U/Iran-v2ray-rules/release/geoip.dat', geosite: 'https://raw.githubusercontent.com/Chocolate4U/Iran-v2ray-rules/release/geosite.dat' },
     dns: { enable: true, listen: `127.0.0.1:${ports.dns}`, ipv6: true, 'enhanced-mode': 'fake-ip', 'fake-ip-range': '198.18.0.1/16', 'default-nameserver': ['1.1.1.1', '8.8.8.8'], nameserver: dnsOnly ? [profile.data.resolver] : settings.dns || ['https://dns.google/dns-query'], 'proxy-server-nameserver': ['https://dns.google/dns-query'] },
-    tun: { enable: settings.mode === 'tun' || dnsOnly, device: 'SpicyVPN', stack: 'mixed', 'auto-route': true, 'auto-detect-interface': true, 'dns-hijack': ['any:53', 'tcp://any:53'], 'strict-route': true },
+    tun: { enable: settings.mode === 'tun' || dnsOnly, device: process.platform === 'darwin' ? 'utun150' : 'SpicyVPN', stack: 'gvisor', 'auto-route': true, 'auto-detect-interface': true, 'dns-hijack': ['any:53', 'tcp://any:53'], 'strict-route': true },
     proxies: dnsOnly ? [] : [{ ...proxy, name: 'selected' }],
     'proxy-groups': dnsOnly ? [] : [{ name: 'SPICY', type: 'select', proxies: ['selected'] }],
     rules: routes
