@@ -1,0 +1,85 @@
+{
+  "name": "spicyvpn-desktop",
+  "productName": "SpicyVPN",
+  "version": "2.4.6",
+  "private": true,
+  "description": "SpicyVPN desktop connection client",
+  "author": "SpicyVPN",
+  "license": "AGPL-3.0-only",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "engines": "python scripts/fetch_engines.py",
+    "test": "node --test test/*.test.cjs",
+    "test:integration": "node --test test/integration/*.test.cjs",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --publish never"
+  },
+  "dependencies": {
+    "js-yaml": "5.5.0",
+    "lucide": "^0.468.0",
+    "qrcode": "^1.5.4",
+    "socks": "^2.8.11",
+    "sortablejs": "^1.15.6",
+    "undici": "8.13.1"
+  },
+  "devDependencies": {
+    "electron": "45.4.1",
+    "electron-builder": "26.18.0",
+    "playwright": "^1.65.1",
+    "ssh2": "^1.17.0"
+  },
+  "build": {
+    "icon": "assets/logo.png",
+    "publish": [{ "provider": "github", "owner": "sinascorpion", "repo": "spicyvpn", "releaseType": "draft" }],
+    "appId": "com.vpn.spicy.desktop",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "lib/**",
+      "ui/**",
+      "assets/**",
+      "package.json",
+      "node_modules/**"
+    ],
+    "extraResources": [
+      {
+        "from": "engines",
+        "to": "engines",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Network",
+      "maintainer": "SpicyVPN <spicyprx@gmail.com>"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.utilities"
+    },
+    "artifactName": "SpicyVPN-${version}-desktop-preview-${os}-${arch}.${ext}"
+  }
+}
