@@ -1,0 +1,5 @@
+<resources>
+    <string name="custom_download">دانلود</string>
+    <string name="custom_upload">آپلود</string>
+    <string name="custom_connected_server">سرور متصل</string>
+</resources>

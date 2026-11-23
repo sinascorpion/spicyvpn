@@ -1,0 +1,5 @@
+<resources>
+    <string name="custom_download">下载</string>
+    <string name="custom_upload">上传</string>
+    <string name="custom_connected_server">已连接服务器</string>
+</resources>

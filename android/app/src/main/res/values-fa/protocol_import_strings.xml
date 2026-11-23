@@ -1,0 +1,7 @@
+<resources>
+    <string name="ssh_upstream_proxy">پراکسی واسط (اختیاری)</string>
+    <string name="native_dns_key">کلید رمزگذاری</string>
+    <string name="native_dns_method">روش رمزگذاری (۰ تا ۵)</string>
+    <string name="native_dns_resolvers">آدرس‌های DNS (هر کدام در یک خط)</string>
+    <string name="configuration_text">متن کانفیگ یا لینک (اختیاری)</string>
+</resources>

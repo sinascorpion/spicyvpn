@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="custom_create_folder">创建文件夹</string>
+    <string name="custom_folder_name">文件夹名称</string>
+    <string name="custom_pin">置顶</string>
+    <string name="custom_unpin">取消置顶</string>
+    <string name="custom_remove_folder">移出文件夹</string>
+    <string name="custom_organize">管理配置</string>
+    <string name="custom_timeout">超时</string>
+    <string name="custom_tap_test">点击测试</string>
+</resources>

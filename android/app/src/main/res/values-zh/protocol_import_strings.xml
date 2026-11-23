@@ -1,0 +1,7 @@
+<resources>
+    <string name="ssh_upstream_proxy">上游代理（可选）</string>
+    <string name="native_dns_key">加密密钥</string>
+    <string name="native_dns_method">加密方式（0–5）</string>
+    <string name="native_dns_resolvers">DNS 服务器（每行一个）</string>
+    <string name="configuration_text">配置文本 / 链接（可选）</string>
+</resources>

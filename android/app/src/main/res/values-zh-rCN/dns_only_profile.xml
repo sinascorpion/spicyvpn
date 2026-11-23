@@ -1,0 +1,4 @@
+<resources>
+    <string name="custom_dns_only">仅 DNS</string>
+    <string name="custom_dns_address">DNS 地址</string>
+</resources>

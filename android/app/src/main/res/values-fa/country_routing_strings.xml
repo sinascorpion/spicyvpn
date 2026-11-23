@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="country_back">بازگشت</string>
+    <string name="country_bypass_description">سایت‌ها و نشانی‌های آی‌پی کشورهای انتخاب‌شده را بدون VPN باز کنید.</string>
+</resources>

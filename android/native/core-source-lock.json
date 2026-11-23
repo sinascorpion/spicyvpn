@@ -1,0 +1,24 @@
+{
+  "Aether": {
+    "repository": "https://github.com/CluvexStudio/Aether.git",
+    "api": "CluvexStudio/Aether",
+    "revision": "d58f9d568083129ce2c767c85054021eb3ee6a38",
+    "directory": "android/native/aether",
+    "paths": [
+      "aether",
+      "quiche/Cargo.toml"
+    ],
+    "version": "v2.4.0"
+  },
+  "DNSTT": {
+    "repository": "https://www.bamsoftware.com/git/dnstt.git",
+    "revision": "0c5c52a57d899c05428c116898941761a2ed83c2",
+    "directory": "android/native/dnstt",
+    "paths": [
+      "dns",
+      "noise",
+      "turbotunnel"
+    ],
+    "version": "v1.20260501.0"
+  }
+}

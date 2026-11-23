@@ -1,0 +1,31 @@
+diff --git a/client/conjure.go b/client/conjure.go
+--- a/client/conjure.go
++++ b/client/conjure.go
+@@ -136,9 +136,11 @@
+ 			return err
+ 		}
+ 		log.Printf("SOCKS accepted: %v", conn.Req)
+-		getSOCKSArgs(conn, config)
++		connectionConfig := *config
++		connectionConfig.Fronts = append([]string(nil), config.Fronts...)
++		getSOCKSArgs(conn, &connectionConfig)
+ 		go func() {
+-			err := handler(conn, config)
++			err := handler(conn, &connectionConfig)
+ 			if err != nil {
+ 				log.Println(err)
+ 			}
+diff --git a/client/conjure/registration.go b/client/conjure/registration.go
+--- a/client/conjure/registration.go
++++ b/client/conjure/registration.go
+@@ -221,7 +221,9 @@
+ 	// Make a connection to the bridge through the phantom
+ 	// This will register the client, obtaining a phantom address and connect
+ 	// to that phantom address all in one go
+-	phantomConn, err := dialer.DialContext(context.Background(), "tcp", config.BridgeAddress)
++	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
++	defer cancel()
++	phantomConn, err := dialer.DialContext(ctx, "tcp", config.BridgeAddress)
+ 	if err != nil {
+ 		return nil, err
+ 	}

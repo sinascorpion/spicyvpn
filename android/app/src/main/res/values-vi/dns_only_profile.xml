@@ -1,0 +1,4 @@
+<resources>
+    <string name="custom_dns_only">Chỉ DNS</string>
+    <string name="custom_dns_address">Địa chỉ DNS</string>
+</resources>

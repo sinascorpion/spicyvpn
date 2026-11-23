@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="custom_create_folder">ایجاد پوشه</string>
+    <string name="custom_folder_name">نام پوشه</string>
+    <string name="custom_pin">پین بالای فهرست</string>
+    <string name="custom_unpin">برداشتن پین</string>
+    <string name="custom_remove_folder">خارج کردن از پوشه</string>
+    <string name="custom_organize">مرتب کردن تنظیمات</string>
+    <string name="custom_timeout">پایان مهلت</string>
+    <string name="custom_tap_test">برای تست بزنید</string>
+</resources>

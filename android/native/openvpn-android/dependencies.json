@@ -1,0 +1,26 @@
+{
+  "ovpn": {
+    "repository": "OpenVPN/openvpn3",
+    "tag": "release/3.11.8"
+  },
+  "asio": {
+    "repository": "chriskohlhoff/asio",
+    "tag": "asio-1-39-0"
+  },
+  "fmt": {
+    "repository": "fmtlib/fmt",
+    "tag": "12.2.1"
+  },
+  "lz4": {
+    "repository": "lz4/lz4",
+    "tag": "v1.11.0"
+  },
+  "mbedtls": {
+    "repository": "Mbed-TLS/mbedtls",
+    "tag": "v3.6.7"
+  },
+  "mbedframework": {
+    "repository": "Mbed-TLS/mbedtls-framework",
+    "tag": "dde0c4a0e448a0552f18817dcea633bb851fd288"
+  }
+}

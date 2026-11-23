@@ -1,0 +1,34 @@
+package com.v2ray.ang.enums
+
+import com.v2ray.ang.AppConfig
+
+enum class EConfigType(val value: Int, val protocolScheme: String) {
+    VMESS(1, AppConfig.VMESS),
+    CUSTOM(2, AppConfig.CUSTOM),
+    SHADOWSOCKS(3, AppConfig.SHADOWSOCKS),
+    SOCKS(4, AppConfig.SOCKS),
+    VLESS(5, AppConfig.VLESS),
+    TROJAN(6, AppConfig.TROJAN),
+    WIREGUARD(7, AppConfig.WIREGUARD),
+
+    //    TUIC(8, AppConfig.TUIC),
+    HYSTERIA2(9, AppConfig.HYSTERIA2),
+    HYSTERIA(900, AppConfig.HYSTERIA),
+    HTTP(10, AppConfig.HTTP),
+    SSH(11, AppConfig.SSH),
+    OPENVPN(12, AppConfig.OPENVPN),
+    AMNEZIAWG(13, AppConfig.AMNEZIA_WG),
+    DNSTT(14, AppConfig.DNSTT),
+    AETHER(15, AppConfig.AETHER),
+    MIHOMO(16, "mihomo://"),
+    MASTERDNS(17, "masterdns://"),
+    STORMDNS(18, "stormdns://"),
+    OPENCONNECT(19, "openconnect://"),
+    IKEV2(20, "ikev2://"),
+    POLICYGROUP(101, AppConfig.CUSTOM),
+    PROXYCHAIN(102, AppConfig.CUSTOM);
+
+    companion object {
+        fun fromInt(value: Int) = entries.firstOrNull { it.value == value }
+    }
+}

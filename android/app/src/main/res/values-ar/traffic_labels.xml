@@ -1,0 +1,5 @@
+<resources>
+    <string name="custom_download">التنزيل</string>
+    <string name="custom_upload">الرفع</string>
+    <string name="custom_connected_server">الخادم المتصل</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="country_back">رجوع</string>
+    <string name="country_bypass_description">اتصل مباشرةً بالمواقع وعناوين IP في البلدان التي تختارها، دون المرور عبر VPN.</string>
+</resources>

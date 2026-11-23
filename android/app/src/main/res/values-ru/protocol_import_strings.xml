@@ -1,0 +1,7 @@
+<resources>
+    <string name="ssh_upstream_proxy">Промежуточный прокси (необязательно)</string>
+    <string name="native_dns_key">Ключ шифрования</string>
+    <string name="native_dns_method">Метод шифрования (0–5)</string>
+    <string name="native_dns_resolvers">DNS-серверы (по одному в строке)</string>
+    <string name="configuration_text">Текст конфигурации / ссылка (необязательно)</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="custom_download">Tải xuống</string>
+    <string name="custom_upload">Tải lên</string>
+    <string name="custom_connected_server">Máy chủ đã kết nối</string>
+</resources>

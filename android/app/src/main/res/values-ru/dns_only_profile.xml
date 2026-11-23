@@ -1,0 +1,4 @@
+<resources>
+    <string name="custom_dns_only">Только DNS</string>
+    <string name="custom_dns_address">Адрес DNS</string>
+</resources>

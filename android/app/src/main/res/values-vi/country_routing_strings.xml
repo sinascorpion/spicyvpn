@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="country_back">Quay lại</string>
+    <string name="country_bypass_description">Truy cập trực tiếp các trang web và địa chỉ IP thuộc quốc gia bạn chọn, không qua VPN.</string>
+</resources>

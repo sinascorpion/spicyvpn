@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="country_back">返回</string>
+    <string name="country_bypass_description">直接存取所選國家的網站和 IP 位址，不經過 VPN。</string>
+</resources>

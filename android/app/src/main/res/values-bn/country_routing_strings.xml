@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="country_back">ফিরে যান</string>
+    <string name="country_bypass_description">নির্বাচিত দেশগুলোর ওয়েবসাইট ও IP ঠিকানায় VPN ছাড়াই সরাসরি সংযোগ করুন.</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="custom_create_folder">建立資料夾</string>
+    <string name="custom_folder_name">資料夾名稱</string>
+    <string name="custom_pin">置頂</string>
+    <string name="custom_unpin">取消置頂</string>
+    <string name="custom_remove_folder">移出資料夾</string>
+    <string name="custom_organize">管理設定</string>
+    <string name="custom_timeout">逾時</string>
+    <string name="custom_tap_test">點擊測試</string>
+</resources>

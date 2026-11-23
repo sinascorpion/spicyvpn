@@ -1,0 +1,4 @@
+<resources>
+    <string name="custom_dns_only">فقط DNS</string>
+    <string name="custom_dns_address">آدرس DNS</string>
+</resources>

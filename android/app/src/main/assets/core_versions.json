@@ -1,0 +1,86 @@
+{
+  "Mihomo": {
+    "version": "v1.19.33",
+    "source": "https://github.com/MetaCubeX/mihomo/releases/tag/v1.19.33",
+    "sha256": {
+      "arm64-v8a": "cfa0be78846bfef7272fe5a73089f8cf0e1f15a6ffb601f5cc809f457f712f67",
+      "armeabi-v7a": "2fbf5e623a6b7b095768bfab1e7f48180045b7bd6b67e36daf8423f81272bedb",
+      "x86": "efcc4989e2ef6fac0c0f22e82b97e6c1fee6623c0a0769328c6e5c41a08cbed5",
+      "x86_64": "fd1fb2773a0b723dbdc7d5f7e81aec8358b43d2674f689edc8f87d453e8687c7"
+    }
+  },
+  "Xray": {
+    "version": "v26.10.31 + cipher mapping + finalMask sequences",
+    "source": "https://github.com/XTLS/Xray-core/releases/tag/v26.10.31",
+    "compatibilityPatch": "Legacy TLS cipher mapping and sequence finalMask fragmentation"
+  },
+  "MasterDNS": {
+    "version": "1.1.0.0 (5f83ee9a)",
+    "source": "https://github.com/masterking32/MasterDnsVPN/tree/5f83ee9a1690a968f9edf495d3a7e00a2043b0bd"
+  },
+  "StormDNS": {
+    "version": "1.0.0.0 (87348df5)",
+    "source": "https://github.com/nullroute1970/StormDNS/tree/87348df5b11f9e490262a713ca268734007af44f"
+  },
+  "AmneziaWG": {
+    "version": "1-3.1 (Mihomo v1.19.33)",
+    "source": "https://wiki.metacubex.one/en/config/proxies/wg/"
+  },
+  "DNSTT": {
+    "version": "v1.20260501.0 / build a4971fa7f6a3",
+    "revision": "0c5c52a57d899c05428c116898941761a2ed83c2",
+    "source": "https://www.bamsoftware.com/software/dnstt/"
+  },
+  "Tor": {
+    "version": "0.4.9.14",
+    "source": "https://raw.githubusercontent.com/guardianproject/gpmaven/master/info/guardianproject/tor-android/0.4.9.14/tor-android-0.4.9.14.aar",
+    "sha256": "28ff2bb6d4d42eabe57183dedd7a97fce77e8ce4b6f5af6fa03993b3ca054edd"
+  },
+  "Tor bridges / Lyrebird": {
+    "version": "0.10.0",
+    "revision": "59ac7e400c384773f5584dbe366516ad04a33d9f",
+    "source": "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/lyrebird.git",
+    "sha256": {
+      "arm64-v8a": "e958a058a877cf2e947b2dfa3845e6a331d977b6f4a71f8e43192887a33810d1",
+      "armeabi-v7a": "eb43dace3130fb3dc91100cafb493992b011c7df0571de17c705eeedeb1cd4a6",
+      "x86": "3b6fbaf03cdfcc701ce5e23c262fb4f8cd748c1eaeffe5b1f462854ab312c5b3",
+      "x86_64": "623dcd17131fd98f182c85d8ea94ed0d28946645a6de3dc6e6d5d41d107449a0"
+    }
+  },
+  "Conjure": {
+    "version": "snapshot 0090962226b8",
+    "revision": "0090962226b82aa4a8fc38506f9b98de67d0781e",
+    "source": "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/conjure.git",
+    "sha256": {
+      "arm64-v8a": "23f1adc535fd1ec44a81933eaecead50c087dfb3d430000c6c22b89bbfe05a3c",
+      "armeabi-v7a": "69e71b7d9b1e2145ddbfc7ecf679476e1e0dd422f3c18ee2699eaff7d6be7127",
+      "x86": "bce2fb36f2a7e713a79c9d1ace20627f04a91fd8c9716c30b26a0d125c56f3cc",
+      "x86_64": "97dcbd90834f60c40cf94bece513d5abe659b2a6bba13a06ede7bd7efd97ccdc"
+    }
+  },
+  "Psiphon": {
+    "version": "snapshot 2956a96b56fe",
+    "revision": "2956a96b56fe09b99e72a8eb4bed3e79d29e3543",
+    "source": "https://github.com/CluvexStudio/psiphon-tunnel-core.git",
+    "sha256": {
+      "arm64-v8a": "01502b268b08d90165be27e945632cc8912dd4381a7f9c6567eb09dba186d340",
+      "armeabi-v7a": "99784e164c732611a90610d7aef3fb8d831cc6fc9f22e49c44d5ebdb29283833",
+      "x86": "ed1973a6580945d8ff7276e1d88b6ce44ac860b60c187a5b41211c6a6ff98eb8",
+      "x86_64": "9ff905a5a748ddce64ecd124a275f0ed577366dc53777e9487561d4e85bf1102"
+    }
+  },
+  "OpenConnect": {
+    "version": "9.21",
+    "dependencies": {
+      "OpenConnect": "9.21",
+      "OpenSSL": "3.5.9",
+      "libxml2": "2.15.4"
+    },
+    "sourceSHA256": {
+      "openconnect-9.21": "5b32369467db6e5f317aa1ed12cfcbb81ed00bdbc765450b6bfcbdc300944a58",
+      "openssl-3.5.9": "603f5602e2eef00d77fbd429d34dcd5822bb301757a1bc9cdb24c670f1eb859a",
+      "libxml2-2.15.4": "98087fd181d9070724f3fbc65c7377db03038eb92bd882374daff44940138821"
+    },
+    "source": "https://www.infradead.org/openconnect/"
+  }
+}

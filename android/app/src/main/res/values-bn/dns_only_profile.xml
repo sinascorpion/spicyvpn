@@ -1,0 +1,4 @@
+<resources>
+    <string name="custom_dns_only">শুধু DNS</string>
+    <string name="custom_dns_address">DNS ঠিকানা</string>
+</resources>
