@@ -2,12 +2,6 @@
 
 Multi-engine VPN client
 
-## Available Platform
-
-Android is available today. Desktop clients for Windows, Linux and macOS are not
-released yet. This repository does not claim desktop feature parity or ship
-renamed third-party applications.
-
 ## Android Features
 
 - Auto, Manual and Custom connection modes.
