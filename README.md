@@ -1,3 +1,7 @@
+<p align="center"><img src="assets/spicyvpn-icon.png" alt="SpicyVPN" width="100"></p>
+
+![SpicyVPN on laptop, tablet and phone](assets/spicyvpn-banner.png)
+
 # SpicyVPN
 
 Multi-engine VPN client
