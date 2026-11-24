@@ -56,26 +56,21 @@
       }
     ],
     "win": {
+      "icon": "assets/icon.ico",
       "target": [
-        "nsis",
         "portable"
       ]
     },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    },
     "linux": {
       "target": [
-        "AppImage",
-        "deb"
+        "AppImage"
       ],
       "category": "Network",
       "maintainer": "SpicyVPN <spicyprx@gmail.com>"
     },
     "mac": {
+      "icon": "assets/icon.icns",
       "target": [
-        "dmg",
         "zip"
       ],
       "category": "public.app-category.utilities"

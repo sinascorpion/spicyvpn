@@ -56,11 +56,9 @@ def main():
     target.mkdir(exist_ok=True)
     system = platform.system()
     arm = platform.machine().lower() in ('aarch64', 'arm64')
-    if system == 'Windows' and arm:
-        raise ValueError('Windows ARM64 is not packaged yet')
     versions = {}
     mihomo = release('MetaCubeX/mihomo')
-    suffix = {'Windows': 'windows-amd64-compatible', 'Linux': 'linux-arm64' if arm else 'linux-amd64-compatible', 'Darwin': 'darwin-arm64' if arm else 'darwin-amd64'}[system]
+    suffix = {'Windows': 'windows-arm64' if arm else 'windows-amd64-compatible', 'Linux': 'linux-arm64' if arm else 'linux-amd64-compatible', 'Darwin': 'darwin-arm64' if arm else 'darwin-amd64'}[system]
     name = f'mihomo-{suffix}-{mihomo["tag_name"]}.' + ('zip' if system == 'Windows' else 'gz')
     data = payload(mihomo, name)
     if system == 'Windows':
@@ -74,7 +72,7 @@ def main():
     versions['Mihomo'] = mihomo['tag_name']
     (target / 'Mihomo_LICENSE.txt').write_bytes(get(f'https://raw.githubusercontent.com/MetaCubeX/mihomo/{mihomo["tag_name"]}/LICENSE'))
     xray = release('XTLS/Xray-core')
-    suffix = {'Windows': 'windows-64', 'Linux': 'linux-arm64-v8a' if arm else 'linux-64', 'Darwin': 'macos-arm64-v8a' if arm else 'macos-64'}[system]
+    suffix = {'Windows': 'windows-arm64-v8a' if arm else 'windows-64', 'Linux': 'linux-arm64-v8a' if arm else 'linux-64', 'Darwin': 'macos-arm64-v8a' if arm else 'macos-64'}[system]
     unpack(payload(xray, f'Xray-{suffix}.zip'), target, {'xray', 'xray.exe', 'wintun.dll', 'geoip.dat', 'geosite.dat', 'LICENSE'})
     if (target / 'LICENSE').exists():
         (target / 'Xray_LICENSE.txt').write_bytes((target / 'LICENSE').read_bytes())
@@ -84,6 +82,8 @@ def main():
     unpack(payload(aether, 'aether-' + suffix), target, {'aether', 'aether.exe', 'LICENSE'})
     (target / 'Aether_LICENSE.txt').write_bytes(get(f'https://raw.githubusercontent.com/CluvexStudio/Aether/{aether["tag_name"]}/LICENSE'))
     versions['Aether'] = aether['tag_name']
+    if system == 'Windows' and arm:
+        versions['Aether architecture'] = 'x64 (Windows emulation)'
     for name in ('mihomo', 'xray', 'aether'):
         if not (target / (name + ('.exe' if system == 'Windows' else ''))).is_file():
             raise ValueError('Required engine missing: ' + name)
