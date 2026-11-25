@@ -29,3 +29,9 @@ does not imply every advanced option works with every other engine.
 
 SpicyVPN client changes are distributed under AGPL-3.0. Third-party files retain
 their original notices and licenses. See [third-party notices](THIRD_PARTY_NOTICES.md).
+
+## Donate
+
+<a href="https://nowpayments.io/donation?api_key=8b06749b-45a1-43aa-983f-986d9d6f38cf" target="_blank" rel="noreferrer noopener">
+  <img src="https://nowpayments.io/images/embeds/donation-button-white.svg" alt="Cryptocurrency & Bitcoin donation button by NOWPayments">
+</a>
